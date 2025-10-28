@@ -1,0 +1,12 @@
+{"nome": "Livro teste 1", "autor": "Autor 1", "Qde_disp": 10, "Qde_uso": 0, "rating": 2, "Registro": 1}
+{"nome": "Lagoa no mar", "autor": "Jose Silva", "Qde_disp": 1, "Qde_uso": 0, "rating": 2, "Registro": 2}
+{"nome": "Livro teste 2", "autor": "Autor 2", "Qde_disp": 1, "Qde_uso": 0, "rating": 2, "Registro": 3}
+{"nome": "Sol", "autor": "Jo\u00e3o", "Qde_disp": 1, "Qde_uso": 0, "rating": 2, "Registro": 4}
+{"nome": "Morte e vida", "autor": "Fidalgo", "Qde_disp": 2, "Qde_uso": 0, "rating": 1, "Registro": 5}
+{"nome": "Sol Lua e Mar", "autor": "Jose Saramago", "Qde_disp": 2, "Qde_uso": 0, "rating": 2, "Registro": 7}
+{"nome": "Morte vida severina", "autor": "Graciliano Ramos", "Qde_disp": 1, "Qde_uso": 0, "rating": 2, "Registro": 8}
+{"nome": "Reflexoes da juventude", "autor": "Manuel carvalho", "Qde_disp": 1, "Qde_uso": 0, "rating": 2, "Registro": 9}
+{"nome": "Ceu Azul", "autor": "Jose Saramago", "Qde_disp": 2, "Qde_uso": 0, "rating": 2, "Registro": 10}
+{"nome": "Testes em prod", "autor": "Isaac Serrano", "Qde_disp": 1, "Qde_uso": 0, "rating": 2, "Registro": 12}
+{"nome": "Aventuras psicodelicas", "autor": "Mano Bro", "Qde_disp": 1, "Qde_uso": 0, "rating": 3.0, "Registro": 13}
+{"nome": "O Fim ", "autor": "Terminator", "Qde_disp": 1, "Qde_uso": 0, "rating": 4.0, "Registro": 14}

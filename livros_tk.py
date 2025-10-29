@@ -1,6 +1,8 @@
 from tkinter import *
 import tkinter as tk
 from tkinter import ttk
+import json
+import interfaces_io
 
 
 
@@ -51,21 +53,32 @@ def janela_livros():
         
         
         def pegar_texto():
-            texto1 = campo_entrada1.get()
-            texto2 = campo_entrada2.get()
-            texto3 = campo_entrada3.get()
-            texto4 = campo_entrada4.get()
-            texto5 = campo_entrada5.get()
-            texto6 = campo_entrada6.get()
+            titulo = campo_entrada1.get()
+            autor = campo_entrada2.get()
+            qde_disp = campo_entrada3.get()
+            qde_uso = campo_entrada4.get()
+            nota = campo_entrada5.get()
+            registro = interfaces_io.procura_ultimo_registro('livro')
+
+
+            cad_livro = {}
+            cad_livro['titulo'] = titulo
+            cad_livro['autor'] = autor
+            cad_livro['Qde_disp'] = qde_disp
+            cad_livro['Qde_uso'] = qde_uso
+            cad_livro['rating'] = nota
+            cad_livro['registro'] = registro
+
+            linha_str = json.dumps(cad_livro)
+
+            resultado = interfaces_io.escreve_em_arquivo('livro',linha_str,'a')
+            print("Processo de gravação do arquivo:",resultado)
+
             
             
             
-            print(texto1)
-            print(texto2)
-            print(texto3)
-            print(texto4)
-            print(texto5)
-            print(texto6)
+           
+           
             
 
         frame_esquerdo = Frame(janela_livros,bg='white')
@@ -80,9 +93,7 @@ def janela_livros():
         #campo_entrada1.pack(side=LEFT)
         campo_entrada1.pack(anchor="w",padx=5,pady=5)
         
-        
-        
-        
+        ##
         frame_esquerdo2 = Frame(janela_livros,bg='white')
         frame_esquerdo2.pack(anchor="w",padx=5,pady=5)
         
@@ -94,21 +105,42 @@ def janela_livros():
         campo_entrada2.pack(side=LEFT)
         
         
-        
+        ##
         frame_esquerdo3 = Frame(janela_livros,bg='white')
         frame_esquerdo3.pack(anchor="w",padx=5,pady=5)
         
         
-        label_instr3 = Label(frame_esquerdo3,text="Informe o autor:",bg='white')
+        label_instr3 = Label(frame_esquerdo3,text="Disponíveis:",bg='white')
         label_instr3.pack(anchor="w",padx=5,pady=5)
 
         campo_entrada3 = Entry(frame_esquerdo3,width = 35,bg='LightGray')
         campo_entrada3.pack(side=LEFT)
         
         
+        ##
+        frame_esquerdo4 = Frame(janela_livros,bg='white')
+        frame_esquerdo4.pack(anchor="w",padx=5,pady=5)
         
         
+        label_instr4 = Label(frame_esquerdo4,text="Em uso:",bg='white')
+        label_instr4.pack(anchor="w",padx=5,pady=5)
 
+        campo_entrada4 = Entry(frame_esquerdo4,width = 35,bg='LightGray')
+        campo_entrada4.pack(side=LEFT)
+
+        ##
+        frame_esquerdo5 = Frame(janela_livros,bg='white')
+        frame_esquerdo5.pack(anchor="w",padx=5,pady=5)
+        
+        
+        label_instr5 = Label(frame_esquerdo5,text="Nota (de 1 a 5):",bg='white')
+        label_instr5.pack(anchor="w",padx=5,pady=5)
+
+        campo_entrada5 = Entry(frame_esquerdo5,width = 35,bg='LightGray')
+        campo_entrada5.pack(side=LEFT)
+
+        
+        ##
         botao_cadastrar_livro = Button(janela_livros, text = "Cadastrar", command=pegar_texto,bg='LightGray')
         botao_cadastrar_livro.pack(pady=20)
         

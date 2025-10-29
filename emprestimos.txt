@@ -1,6 +1,10 @@
+{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 1}
+{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 2}
 {"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 3}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 3}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 3}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 3}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 3}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 3}
+{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 4}
+{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 5}
+{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 6}
+{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 7}
+{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 8}
+{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 9}
+{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 10}

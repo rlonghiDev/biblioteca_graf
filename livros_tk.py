@@ -14,12 +14,11 @@ def janela_livros():
         selecao = combobox.get()
 
         if selecao == 'Acrescentar':
-            print("Acrescentar")
             cadastro_tk()
             
 
         if selecao == 'Retirar':
-            print("Leitores")
+            print("Retirar")
 
 
         if selecao == 'Voltar':
@@ -70,16 +69,12 @@ def janela_livros():
             cad_livro['registro'] = registro
 
             linha_str = json.dumps(cad_livro)
+            linha_str += "\n"
 
             resultado = interfaces_io.escreve_em_arquivo('livro',linha_str,'a')
             print("Processo de gravação do arquivo:",resultado)
 
-            
-            
-            
-           
-           
-            
+
 
         frame_esquerdo = Frame(janela_livros,bg='white')
         frame_esquerdo.pack(anchor="w",padx=5,pady=5)
@@ -144,6 +139,8 @@ def janela_livros():
         botao_cadastrar_livro = Button(janela_livros, text = "Cadastrar", command=pegar_texto,bg='LightGray')
         botao_cadastrar_livro.pack(pady=20)
         
-    
+    # def apaga_livro_tk():
+
+
 
     janela_livros.mainloop()

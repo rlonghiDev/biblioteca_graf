@@ -11,3 +11,4 @@
 {"titulo": "Aventuras psicodelicas", "autor": "Mano Bro", "Qde_disp": 1, "Qde_uso": 0, "rating": 3.0, "Registro": 11}
 {"titulo": "O Fim ", "autor": "Terminator", "Qde_disp": 1, "Qde_uso": 0, "rating": 4.0, "Registro": 12}
 {"titulo": "La Luna Gena", "autor": "Pablo Neruda", "Qde_disp": "2", "Qde_uso": "0", "rating": "5", "registro": 13}
+{"titulo": "O mar", "autor": "Autor teste", "Qde_disp": "2", "Qde_uso": "0", "rating": "5", "registro": 1}

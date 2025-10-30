@@ -9,14 +9,11 @@ def obter_selecao():
     #Captura seleção do combobox
     selecao = combobox.get()
 
-    if selecao == 'Livros':
-        livros_tk.janela_livros()
+    if selecao == 'Livros':livros_tk.janela_livros()
 
-    if selecao == 'Leitores':
-        print("Leitores")
+    if selecao == 'Leitores':print("Leitores")
 
-    if selecao == 'Emprestimo':
-        print("Emprestimo")
+    if selecao == 'Emprestimo': print("Emprestimo")
 
     if selecao == 'Opiniao Atendimento':
         print("Opiniao")

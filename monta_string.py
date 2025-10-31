@@ -1,3 +1,5 @@
+import avaliacao
+
 def monta_string_livro(dict):
         linha1 = '#' * 44
         espacamento = '#' + ' ' * 42 + '#'

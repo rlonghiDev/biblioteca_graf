@@ -66,10 +66,10 @@ def janela_livros():
             cad_livro['Qde_disp'] = qde_disp
             cad_livro['Qde_uso'] = qde_uso
             cad_livro['rating'] = nota
-            cad_livro['registro'] = registro
+            cad_livro['Registro'] = registro
 
             linha_str = json.dumps(cad_livro)
-            linha_str += "\n"
+            linha_str = "\n" + linha_str
 
             resultado = interfaces_io.escreve_em_arquivo('livro',linha_str,'a')
             print("Processo de gravação do arquivo:",resultado)

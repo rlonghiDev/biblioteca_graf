@@ -5,6 +5,7 @@ import livros_tk
 import interfaces_io
 import json
 import monta_string
+import avaliacao
 
 
 # for i in range(0,3):
@@ -27,8 +28,12 @@ def relatorio_livros():
     
     lista_linha_str = interfaces_io.le_arquivo('livro')
     
+    rel_livro = ''
+    
     for linha in lista_linha_str:
         dict_livro = json.loads(linha)
+        print(dict_livro)
+        print(dict_livro['Registro'])
         ficha_livro = monta_string.monta_string_livro(dict_livro)
         rel_livro += ficha_livro
     

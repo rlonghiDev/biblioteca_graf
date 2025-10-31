@@ -18,6 +18,7 @@ def le_arquivo(tipo_arquivo):
     
     try:
         arquivo_para_abrir = nome_arquivo(tipo_arquivo)
+        limpa_linha_em_branco(tipo_arquivo)
 
         with open(arquivo_para_abrir,"rt") as arq:
             linha = arq.readlines()
@@ -54,8 +55,10 @@ def escreve_em_arquivo(tipo_arquivo,conteudo_para_escrever,forma_escrita):
         return 'erro'
 
 def limpa_linha_em_branco(arquivo):
-        
+    
     linhas = le_arquivo(arquivo)
+    
+    print(linhas)
 
     linhas_com_conteudo = []
     conteudo = ""
@@ -69,6 +72,7 @@ def limpa_linha_em_branco(arquivo):
         conteudo += str(linha)
 
     escreve_em_arquivo(arquivo,conteudo,'w')
+
 
 def procura_ultimo_registro(tipo_procura):
         
@@ -93,6 +97,8 @@ def procura_ultimo_registro(tipo_procura):
 
     valor = int(reg) + 1 #Incrementa valor para a próxima entrada
     return valor
+
+
 
 
 

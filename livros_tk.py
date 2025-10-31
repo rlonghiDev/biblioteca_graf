@@ -3,6 +3,8 @@ import tkinter as tk
 from tkinter import ttk
 import json
 import interfaces_io
+import mensagem_aviso_tk
+import opcoes_combobox
 
 
 
@@ -18,6 +20,7 @@ def janela_livros():
             
 
         if selecao == 'Retirar':
+            apaga_livro_tk()
             print("Retirar")
 
 
@@ -31,7 +34,7 @@ def janela_livros():
     janela_livros = Tk()
     janela_livros.title("Livros")
     janela_livros['bg']=('white') 
-    janela_livros.geometry('600x600+50+20')
+    janela_livros.geometry('600x650+50+20')
     Etiqueta1 = Label(janela_livros, height=3,width=50,fg = 'black', bg = 'white',text="Gerenciamento do Acervo de Livros",relief='groove')
     Etiqueta1.pack(pady=2)
     Etiqueta2 = Label(janela_livros, height=2, width=40, text = 'Escolha a função desejada abaixo')
@@ -72,7 +75,18 @@ def janela_livros():
             linha_str = "\n" + linha_str
 
             resultado = interfaces_io.escreve_em_arquivo('livro',linha_str,'a')
-            print("Processo de gravação do arquivo:",resultado)
+            
+            aviso = ('Processo de gravação do arquivo:',resultado)
+            mensagem_aviso_tk.popup_aviso(aviso)
+            
+            
+            #Limpa campos texto
+            campo_entrada1.delete(0,tk.END)
+            campo_entrada2.delete(0,tk.END)
+            campo_entrada3.delete(0,tk.END)
+            campo_entrada4.delete(0,tk.END)
+            campo_entrada5.delete(0,tk.END)
+            
 
 
 
@@ -139,8 +153,91 @@ def janela_livros():
         botao_cadastrar_livro = Button(janela_livros, text = "Cadastrar", command=pegar_texto,bg='LightGray')
         botao_cadastrar_livro.pack(pady=20)
         
-    # def apaga_livro_tk():
+        
+        
+    def apaga_livro_tk():
+        
+        def obter_selecao_apaga():
+
+            #Captura seleção do combobox
+            
+            selecao = combobox_apaga.get()
+
+            posicao_hifen = selecao.find('-')
+            inicio_string = selecao[:posicao_hifen]
+            registro_para_apagar = ''
+            
+            for i in inicio_string:
+                if i.isdigit():
+                    registro_para_apagar += i
+                    
+
+            linhas_do_arquivo = interfaces_io.le_arquivo('livro')
+            registro_na_linha = ''
+            
+            for indice,linha in enumerate(linhas_do_arquivo):
+                posicao_registro = linha.find('Registro')
+                final_string = linha[posicao_registro:]
+                for i in final_string:
+                    if i.isdigit():
+                        registro_na_linha += i
+                
+                print("Registro na Linha:",registro_na_linha)
+                print("Registro para apagar:",registro_para_apagar)
+                
+                if registro_para_apagar == registro_na_linha:
+                    indice_para_apagar = indice
+                else:
+                    registro_na_linha = ''
+                
+                
+                    
+            del linhas_do_arquivo[indice_para_apagar]
+            
+            print(linhas_do_arquivo)
+                
+                    
+                    
+
+                        
+                
+            
+            
+            
+        
+        
+        
+        
+        
+        opcoes = opcoes_combobox.carrega_opcoes('livro')
+        
+        frame_esquerdo = Frame(janela_livros,bg='white')
+        frame_esquerdo.pack(anchor="w",padx=200,pady=25)
+        
+        combobox_apaga = ttk.Combobox(frame_esquerdo, values=opcoes, state="readonly")
+        combobox_apaga.set("Escolha o livro") # Define o texto inicial
+        combobox_apaga.pack(pady=10)
+        
+        
+        botao_apaga = tk.Button(frame_esquerdo, text="Apagar", command=obter_selecao_apaga)
+        botao_apaga.pack(pady=10)
+        
+        
 
 
+    
+    
+    
+    
+    
+    
 
     janela_livros.mainloop()
+    
+    
+    
+    
+    
+    
+    
+janela_livros()

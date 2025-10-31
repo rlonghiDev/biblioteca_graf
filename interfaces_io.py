@@ -1,3 +1,5 @@
+import mensagem_aviso_tk
+
 
 def nome_arquivo(tipo_arquivo):
 
@@ -13,25 +15,48 @@ def nome_arquivo(tipo_arquivo):
     return arquivo_para_abrir
 
 
-
 def le_arquivo(tipo_arquivo):
     
     try:
         arquivo_para_abrir = nome_arquivo(tipo_arquivo)
-        limpa_linha_em_branco(tipo_arquivo)
+        
+        #limpa_linha_em_branco(tipo_arquivo)
 
-        with open(arquivo_para_abrir,"rt") as arq:
-            linha = arq.readlines()
+        with open(arquivo_para_abrir,"r") as arq:
+            linhas = arq.readlines()
 
         arq.close()
-
-        return linha
+        
+        return linhas #Todas as linhas do arquivo
 
     except Exception as e:
         
-        print("Erro na leitura do arquivo:",e)
+        aviso = ("Erro na leitura do arquivo:",e)
+        mensagem_aviso_tk.popup_aviso(aviso)
         
         return
+
+
+
+def limpa_linha_em_branco(arquivo):
+    
+    linhas = le_arquivo(arquivo)
+    
+
+    linhas_com_conteudo = []
+    conteudo = ""
+    
+    for linha in linhas:
+        
+        if linha.strip():
+            linhas_com_conteudo.append(linha)
+            
+    for linha in linhas_com_conteudo:
+        conteudo += str(linha)
+
+    escreve_em_arquivo(arquivo,conteudo,'w')
+
+
 
 
 
@@ -51,27 +76,9 @@ def escreve_em_arquivo(tipo_arquivo,conteudo_para_escrever,forma_escrita):
         return 'sucesso'
     
     except Exception as e:
-        print("Erro na escrita do arquivo:",e)
+        aviso_mensagem = ("Erro na escrita do arquivo:",e)
+        mensagem_aviso_tk.popup_aviso(aviso_mensagem)
         return 'erro'
-
-def limpa_linha_em_branco(arquivo):
-    
-    linhas = le_arquivo(arquivo)
-    
-    print(linhas)
-
-    linhas_com_conteudo = []
-    conteudo = ""
-    
-    for linha in linhas:
-        
-        if linha.strip():
-            linhas_com_conteudo.append(linha)
-            
-    for linha in linhas_com_conteudo:
-        conteudo += str(linha)
-
-    escreve_em_arquivo(arquivo,conteudo,'w')
 
 
 def procura_ultimo_registro(tipo_procura):
@@ -96,6 +103,7 @@ def procura_ultimo_registro(tipo_procura):
             reg += i
 
     valor = int(reg) + 1 #Incrementa valor para a próxima entrada
+    
     return valor
 
 

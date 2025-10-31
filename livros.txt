@@ -14,3 +14,5 @@
 {"titulo": "O mar", "autor": "Autor teste", "Qde_disp": "2", "Qde_uso": "0", "rating": "5", "Registro": 14}
 {"titulo": "A lua", "autor": "Omar", "Qde_disp": "2", "Qde_uso": "0", "rating": "4", "Registro": 15}
 {"titulo": "Bastidores de um Golpe", "autor": "Montenegro", "Qde_disp": "1", "Qde_uso": "0", "rating": "3", "Registro": 16}
+{"titulo": "Python for beginners", "autor": "Anderson", "Qde_disp": "5", "Qde_uso": "0", "rating": "5", "Registro": 17}
+{"titulo": "Java for experts", "autor": "Antony James", "Qde_disp": "2", "Qde_uso": "0", "rating": "5", "Registro": 18}

@@ -21,7 +21,6 @@ def janela_livros():
 
         if selecao == 'Retirar':
             apaga_livro_tk()
-            print("Retirar")
 
 
         if selecao == 'Voltar':
@@ -87,8 +86,6 @@ def janela_livros():
             campo_entrada4.delete(0,tk.END)
             campo_entrada5.delete(0,tk.END)
             
-
-
 
         frame_esquerdo = Frame(janela_livros,bg='white')
         frame_esquerdo.pack(anchor="w",padx=5,pady=5)
@@ -182,9 +179,6 @@ def janela_livros():
                     if i.isdigit():
                         registro_na_linha += i
                 
-                print("Registro na Linha:",registro_na_linha)
-                print("Registro para apagar:",registro_para_apagar)
-                
                 if registro_para_apagar == registro_na_linha:
                     indice_para_apagar = indice
                 else:
@@ -194,21 +188,20 @@ def janela_livros():
                     
             del linhas_do_arquivo[indice_para_apagar]
             
-            print(linhas_do_arquivo)
-                
-                    
-                    
-
-                        
-                
+            linhas_do_arquivo_str = ''
+            
+            for l in linhas_do_arquivo:
+                linhas_do_arquivo_str += l
+            
+            retorno = interfaces_io.escreve_em_arquivo('livro',linhas_do_arquivo_str,'w')
+            
+            if retorno == 'sucesso':
+                mensagem_aviso_tk.popup_aviso('Livro apagado com sucesso')
+            
+            if retorno == 'erro':
+                mensagem_aviso_tk.popup_aviso('Falha ao apagar o livro, tente novamente')
             
             
-            
-        
-        
-        
-        
-        
         opcoes = opcoes_combobox.carrega_opcoes('livro')
         
         frame_esquerdo = Frame(janela_livros,bg='white')
@@ -225,19 +218,6 @@ def janela_livros():
         
 
 
-    
-    
-    
-    
-    
-    
 
     janela_livros.mainloop()
     
-    
-    
-    
-    
-    
-    
-janela_livros()

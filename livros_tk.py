@@ -5,6 +5,7 @@ import json
 import interfaces_io
 import mensagem_aviso_tk
 import opcoes_combobox
+import avaliacao
 
 
 
@@ -33,21 +34,30 @@ def janela_livros():
     janela_livros = Tk()
     janela_livros.title("Livros")
     janela_livros['bg']=('white') 
-    janela_livros.geometry('600x650+50+20')
+    #janela_livros.geometry('600x650+50+20')
     Etiqueta1 = Label(janela_livros, height=3,width=50,fg = 'black', bg = 'white',text="Gerenciamento do Acervo de Livros",relief='groove')
-    Etiqueta1.pack(pady=2)
+    Etiqueta1.grid(row=0,column=0)
     Etiqueta2 = Label(janela_livros, height=2, width=40, text = 'Escolha a função desejada abaixo')
-    Etiqueta2.pack()
+    Etiqueta2.grid(row=1,column=0)
+   
+   
+    ##Em branco
+    Label(text="", width=10,bg='white').grid(row=2, column=0)
+               
     #### Combobox ####
-
     opcoes = ['Acrescentar','Retirar','Voltar']
     combobox = ttk.Combobox(janela_livros, values=opcoes, state="readonly")
     combobox.set("Escolha uma opção") # Define o texto inicial
-    combobox.pack(pady=10)
+    combobox.grid(row=3,column=0)
 
+    ##Em branco
+    Label(text="", width=10,bg='white').grid(row=4, column=0)
+               
+    
+    
     # Criação do botão
     botao = tk.Button(janela_livros, text="Escolha", command=obter_selecao)
-    botao.pack(pady=10)
+    botao.grid(row=5,column=0)
     
 
     def cadastro_tk():
@@ -58,8 +68,11 @@ def janela_livros():
             autor = campo_entrada2.get()
             qde_disp = campo_entrada3.get()
             qde_uso = campo_entrada4.get()
-            nota = campo_entrada5.get()
             registro = interfaces_io.procura_ultimo_registro('livro')
+            nota1 = campo_entrada5.get()
+            avaliacao.avaliacao(1,registro,nota1)
+            nota = avaliacao.informa_media_avaliacao(1,registro)
+            
 
 
             cad_livro = {}
@@ -86,76 +99,75 @@ def janela_livros():
             campo_entrada4.delete(0,tk.END)
             campo_entrada5.delete(0,tk.END)
             
-
-        frame_esquerdo = Frame(janela_livros,bg='white')
-        frame_esquerdo.pack(anchor="w",padx=5,pady=5)
+            
+        global frame_cadastra
+        frame_cadastra=Frame(janela_livros,bg='white')
+        frame_cadastra.grid(row=6,column=0)
         
-        
-        label_instr1 = Label(frame_esquerdo,text="Informe o título do Livro:",bg='white')
-        #label_instr1.pack(side=LEFT)
-        label_instr1.pack(anchor="w",padx=5,pady=5)
+        label_instr1 = Label(frame_cadastra,text="Informe o título do Livro:",bg='white',justify=RIGHT)
+        label_instr1.grid(row=6,column=0)
 
-        campo_entrada1 = Entry(frame_esquerdo,width = 35,bg='LightGray')
-        #campo_entrada1.pack(side=LEFT)
-        campo_entrada1.pack(anchor="w",padx=5,pady=5)
+        campo_entrada1 = Entry(frame_cadastra,width = 35,bg='LightGray')
+        campo_entrada1.grid(row=6,column=1)
         
         ##
-        frame_esquerdo2 = Frame(janela_livros,bg='white')
-        frame_esquerdo2.pack(anchor="w",padx=5,pady=5)
-        
-        
-        label_instr2 = Label(frame_esquerdo2,text="Informe o autor:",bg='white')
-        label_instr2.pack(anchor="w",padx=5,pady=5)
+    
+        label_instr2 = Label(frame_cadastra,text="Informe o autor:",bg='white',justify=RIGHT)
+        label_instr2.grid(row=7,column=0)
 
-        campo_entrada2 = Entry(frame_esquerdo2,width = 35,bg='LightGray')
-        campo_entrada2.pack(side=LEFT)
+        campo_entrada2 = Entry(frame_cadastra,width = 35,bg='LightGray')
+        campo_entrada2.grid(row=7,column=1)
         
         
         ##
-        frame_esquerdo3 = Frame(janela_livros,bg='white')
-        frame_esquerdo3.pack(anchor="w",padx=5,pady=5)
         
         
-        label_instr3 = Label(frame_esquerdo3,text="Disponíveis:",bg='white')
-        label_instr3.pack(anchor="w",padx=5,pady=5)
+        label_instr3 = Label(frame_cadastra,text="Disponíveis:",bg='white',justify='right')
+        label_instr3.grid(row=8,column=0)
 
-        campo_entrada3 = Entry(frame_esquerdo3,width = 35,bg='LightGray')
-        campo_entrada3.pack(side=LEFT)
+        campo_entrada3 = Entry(frame_cadastra,width = 35,bg='LightGray')
+        campo_entrada3.grid(row=8,column=1)
         
         
-        ##
-        frame_esquerdo4 = Frame(janela_livros,bg='white')
-        frame_esquerdo4.pack(anchor="w",padx=5,pady=5)
+        ##        
         
-        
-        label_instr4 = Label(frame_esquerdo4,text="Em uso:",bg='white')
-        label_instr4.pack(anchor="w",padx=5,pady=5)
+        label_instr4 = Label(frame_cadastra,text="Em uso:",bg='white',justify=tk.RIGHT)
+        label_instr4.grid(row=9,column=0)
 
-        campo_entrada4 = Entry(frame_esquerdo4,width = 35,bg='LightGray')
-        campo_entrada4.pack(side=LEFT)
+        campo_entrada4 = Entry(frame_cadastra,width = 35,bg='LightGray')
+        campo_entrada4.grid(row=9,column=1)
 
         ##
-        frame_esquerdo5 = Frame(janela_livros,bg='white')
-        frame_esquerdo5.pack(anchor="w",padx=5,pady=5)
         
-        
-        label_instr5 = Label(frame_esquerdo5,text="Nota (de 1 a 5):",bg='white')
-        label_instr5.pack(anchor="w",padx=5,pady=5)
+        label_instr5 = Label(frame_cadastra,text="Nota (de 1 a 5):",bg='white')
+        label_instr5.grid(row=10,column=0)
 
-        campo_entrada5 = Entry(frame_esquerdo5,width = 35,bg='LightGray')
-        campo_entrada5.pack(side=LEFT)
+        campo_entrada5 = Entry(frame_cadastra,width = 35,bg='LightGray')
+        campo_entrada5.grid(row=10,column=1)
 
-        
+        ##Em branco
+        Label(frame_cadastra,text="", width=10,bg='white').grid(row=11, column=0)
         ##
-        botao_cadastrar_livro = Button(janela_livros, text = "Cadastrar", command=pegar_texto,bg='LightGray')
-        botao_cadastrar_livro.pack(pady=20)
+        botao_cadastrar_livro = Button(frame_cadastra, text = "Cadastrar", command=pegar_texto,bg='LightGray')
+        botao_cadastrar_livro.grid(row=11,column=1)
         
+        ##Em branco
+        Label(frame_cadastra,text="", width=10,bg='white').grid(row=12, column=0)
         
-        
+    def apaga_frame_cadastra():
+        frame_cadastra.destroy()
+    
+   
+   
+   
     def apaga_livro_tk():
         
+        apaga_frame_cadastra()
+        
         def obter_selecao_apaga():
-
+            
+            
+                
             #Captura seleção do combobox
             
             selecao = combobox_apaga.get()
@@ -201,23 +213,35 @@ def janela_livros():
             if retorno == 'erro':
                 mensagem_aviso_tk.popup_aviso('Falha ao apagar o livro, tente novamente')
             
-            
+        
+        
+        
+        global frame_apaga
+        frame_apaga = Frame(janela_livros,bg='white')
+        frame_apaga.grid(row=6,column=0)
+        
+        ##Em branco
+        Label(frame_apaga,text="", width=10,bg='white').grid(row=6, column=0)
+        
+        
+        
         opcoes = opcoes_combobox.carrega_opcoes('livro')
-        
-        frame_esquerdo = Frame(janela_livros,bg='white')
-        frame_esquerdo.pack(anchor="w",padx=200,pady=25)
-        
-        combobox_apaga = ttk.Combobox(frame_esquerdo, values=opcoes, state="readonly")
+        combobox_apaga = ttk.Combobox(frame_apaga, values=opcoes, state="readonly")
         combobox_apaga.set("Escolha o livro") # Define o texto inicial
-        combobox_apaga.pack(pady=10)
+        combobox_apaga.grid(row=7,column=0)
+        
+        ##Em branco
+        Label(text="", width=10,bg='white').grid(row=8, column=0)
+        
+        ##Botão
+        botao_apaga = tk.Button(frame_apaga, text="Apagar", command=obter_selecao_apaga)
+        botao_apaga.grid(row=9,column=0)
         
         
-        botao_apaga = tk.Button(frame_esquerdo, text="Apagar", command=obter_selecao_apaga)
-        botao_apaga.pack(pady=10)
-        
-        
-
+        ##Em branco
+        Label(frame_apaga,text="", width=10,bg='white').grid(row=10, column=0)
 
 
     janela_livros.mainloop()
-    
+
+janela_livros()

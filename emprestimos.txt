@@ -1,10 +1,15 @@
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 1}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 2}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 3}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 4}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 5}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 6}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 7}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 8}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 9}
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 10}
+{"leitor": "4", "livro": "5", "data": "2025-10-18", "Registro": 1}
+{"leitor": "4", "livro": "5", "data": "2025-10-18", "Registro": 2}
+{"leitor": "4", "livro": "5", "data": "2025-10-18", "Registro": 3}
+{"leitor": "4", "livro": "5", "data": "2025-10-18", "Registro": 4}
+{"leitor": "4", "livro": "5", "data": "2025-10-18", "Registro": 5}
+{"leitor": "4", "livro": "5", "data": "2025-10-18", "Registro": 6}
+{"leitor": "4", "livro": "5", "data": "2025-10-18", "Registro": 7}
+{"leitor": "4", "livro": "5", "data": "2025-10-18", "Registro": 8}
+{"leitor": "4", "livro": "5", "data": "2025-10-18", "Registro": 9}
+{"leitor": "4", "livro": "5", "data": "2025-10-18", "Registro": 10}
+{"leitor": "2", "livro": "2", "data": "2025-11-02", "Registro": 11}
+{"leitor": "3", "livro": "2", "data": "2025-11-02", "Registro": 12}
+{"leitor": "5", "livro": "3", "data": "2025-11-02", "Registro": 13}
+{"leitor": "5", "livro": "4", "data": "2025-11-02", "Registro": 14}
+{"leitor": "3", "livro": "3", "data": "2025-11-02", "Registro": 15}

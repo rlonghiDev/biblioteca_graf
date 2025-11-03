@@ -25,3 +25,7 @@ def monta_string_livro(dict):
         ficha = (linha1 + '\n' + espacamento + '\n' + linha2 + '\n' + linha3 + '\n' + linha4 + '\n' + linha5 + '\n' + linha6 + '\n' +  espacamento + '\n' +  linha1 + '\n')
         
         return ficha
+
+
+# def monta_string_leitor(dict_leitor):
+        

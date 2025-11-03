@@ -32,21 +32,34 @@ def janela_leitores():
     janela_leitores = Tk()
     janela_leitores.title("Leitores")
     janela_leitores['bg']=('white') 
-    janela_leitores.geometry('600x650+50+20')
-    Etiqueta1 = Label(janela_leitores, height=3,width=50,fg = 'black', bg = 'white',text="Gerenciamento dde Leitores",relief='groove')
-    Etiqueta1.pack(pady=2)
+    #janela_leitores.geometry('600x650+50+20')
+    
+    Etiqueta1 = Label(janela_leitores, height=3,width=50,fg = 'black', bg = 'white',text="Gerenciamento de Leitores",relief='groove')
+    Etiqueta1.grid(row=0,column=0)
+    
     Etiqueta2 = Label(janela_leitores, height=2, width=40, text = 'Escolha a função desejada abaixo')
-    Etiqueta2.pack()
+    Etiqueta2.grid(row=1,column=0)
+    
+    ##Em branco
+    Label(janela_leitores,text="", width=10,bg='white').grid(row=2, column=0)
+    
     #### Combobox ####
 
     opcoes = ['Acrescentar','Retirar','Voltar']
     combobox = ttk.Combobox(janela_leitores, values=opcoes, state="readonly")
     combobox.set("Escolha uma opção") # Define o texto inicial
-    combobox.pack(pady=10)
+    combobox.grid(row=3, column=0)
+    
+    
+    ##Em branco
+    Label(janela_leitores,text="", width=10,bg='white').grid(row=4, column=0)
 
     # Criação do botão
     botao = tk.Button(janela_leitores, text="Escolha", command=obter_selecao)
-    botao.pack(pady=10)
+    botao.grid(row=5, column=0)
+    
+     ##Em branco ###
+    Label(janela_leitores,text="", width=10,bg='white').grid(row=6, column=0)
     
 
     def cadastro_tk():
@@ -84,61 +97,50 @@ def janela_leitores():
             
         global frame_esquerdo
         frame_esquerdo = Frame(janela_leitores,bg='white')
-        frame_esquerdo.pack(anchor="w",padx=5,pady=5)
+        frame_esquerdo.grid(row=7,column=0)
         
         
         label_instr1 = Label(frame_esquerdo,text="Informe o nome do Leitor:",bg='white')
-        #label_instr1.pack(side=LEFT)
-        label_instr1.pack(anchor="w",padx=5,pady=5)
+        label_instr1.grid(row=8,column=0)
 
         campo_entrada1 = Entry(frame_esquerdo,width = 35,bg='LightGray')
-        #campo_entrada1.pack(side=LEFT)
-        campo_entrada1.pack(anchor="w",padx=5,pady=5)
-        
-        ##
-        global frame_esquerdo2
-        frame_esquerdo2 = Frame(janela_leitores,bg='white')
-        frame_esquerdo2.pack(anchor="w",padx=5,pady=5)
+        campo_entrada1.grid(row=8,column=1)
         
         
-        label_instr2 = Label(frame_esquerdo2,text="Informe a escola:",bg='white')
-        label_instr2.pack(anchor="w",padx=5,pady=5)
+        label_instr2 = Label(frame_esquerdo,text="Informe a escola:",bg='white')
+        label_instr2.grid(row=9,column=0)
 
-        campo_entrada2 = Entry(frame_esquerdo2,width = 35,bg='LightGray')
-        campo_entrada2.pack(side=LEFT)
+        campo_entrada2 = Entry(frame_esquerdo,width = 35,bg='LightGray')
+        campo_entrada2.grid(row=9,column=1)
         
         
-        ##
-        global frame_esquerdo3
-        frame_esquerdo3 = Frame(janela_leitores,bg='white')
-        frame_esquerdo3.pack(anchor="w",padx=5,pady=5)
-        
-        
-        label_instr3 = Label(frame_esquerdo3,text="Informe a turma:",bg='white')
-        label_instr3.pack(anchor="w",padx=5,pady=5)
+        label_instr3 = Label(frame_esquerdo,text="Informe a turma:",bg='white')
+        label_instr3.grid(row=10,column=0)
 
-        campo_entrada3 = Entry(frame_esquerdo3,width = 35,bg='LightGray')
-        campo_entrada3.pack(side=LEFT)
+
+        campo_entrada3 = Entry(frame_esquerdo,width = 35,bg='LightGray')
+        campo_entrada3.grid(row=10,column=1)
+
+        ##Em branco ###
+        Label(frame_esquerdo,text="", width=10,bg='white').grid(row=11, column=0)
+        
+        botao_cadastrar_leitor = Button(frame_esquerdo, text = "Cadastrar", command=pegar_texto,bg='LightGray')
+        botao_cadastrar_leitor.grid(row=12,column=1)
 
         
-        ##
-        global botao_cadastrar_leitor
-        botao_cadastrar_leitor = Button(janela_leitores, text = "Cadastrar", command=pegar_texto,bg='LightGray')
-        botao_cadastrar_leitor.pack(pady=20)
+        ##Em branco ###
+        Label(janela_leitores,text="", width=10,bg='white').grid(row=13, column=0)
         
+   
     #Limpa a janela pra receber a nova função   
     def limpa_frame():
-        for widget in frame_esquerdo.winfo_children():
-            widget.destroy()
-            
-        for widget in frame_esquerdo2.winfo_children():
-            widget.destroy()
-            
-        for widget in frame_esquerdo3.winfo_children():
-            widget.destroy()
-            
-        botao_cadastrar_leitor.destroy()
+        # for widget in frame_esquerdo.winfo_children():
+        #     widget.destroy()
+        frame_esquerdo.destroy()
         
+        
+            
+
         
     def apaga_leitor_tk():
         
@@ -195,18 +197,22 @@ def janela_leitores():
         opcoes = opcoes_combobox.carrega_opcoes('leitor')
         
         frame_esquerdo = Frame(janela_leitores,bg='white')
-        frame_esquerdo.pack(anchor="w",padx=200,pady=25)
+        frame_esquerdo.grid(row=7,column=0)
         
         combobox_apaga = ttk.Combobox(frame_esquerdo, values=opcoes, state="readonly")
         combobox_apaga.set("Escolha o leitor") # Define o texto inicial
-        combobox_apaga.pack(pady=10)
+        combobox_apaga.grid(row=7,column=0)
         
+        ##Em branco ###
+        Label(frame_esquerdo,text="", width=10,bg='white').grid(row=8, column=0)
         
         botao_apaga = tk.Button(frame_esquerdo, text="Apagar", command=obter_selecao_apaga)
-        botao_apaga.pack(pady=10)
+        botao_apaga.grid(row=9,column=0)
         
         
 
 
 
     janela_leitores.mainloop()
+    
+#janela_leitores()

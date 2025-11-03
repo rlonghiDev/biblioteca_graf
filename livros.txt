@@ -14,3 +14,6 @@
 {"titulo": "O mar", "autor": "Autor teste", "Qde_disp": "2", "Qde_uso": "0", "rating": "5", "Registro": 14}
 {"titulo": "Bastidores de um Golpe", "autor": "Montenegro", "Qde_disp": "1", "Qde_uso": "0", "rating": "3", "Registro": 16}
 {"titulo": "Python for beginners", "autor": "Anderson", "Qde_disp": "5", "Qde_uso": "0", "rating": "5", "Registro": 17}
+{"titulo": "Tieta", "autor": "Jorge Amado", "Qde_disp": "1", "Qde_uso": "0", "rating": "4", "Registro": 18}
+{"titulo": "O c\u00e9u ", "autor": "Jose Silveira ", "Qde_disp": "2", "Qde_uso": "0", "rating": "3", "Registro": 19}
+{"titulo": "Moises", "autor": "Antony", "Qde_disp": "2", "Qde_uso": "0", "rating": 3.0, "Registro": 21}

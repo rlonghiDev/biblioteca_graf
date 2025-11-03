@@ -4,10 +4,10 @@ import interfaces_io
 opcoes = []
 
 def carrega_opcoes(tipo_arquivo):
+
+    opcoes.clear() 
     
-    arquivo_para_ler = interfaces_io.nome_arquivo(tipo_arquivo)
-    
-    #Busca informações do arquvivo de livros
+    #Busca informações do arquivo de livros
     linhas_do_arquivo = interfaces_io.le_arquivo(tipo_arquivo)
 
     for linha in linhas_do_arquivo:

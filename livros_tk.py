@@ -243,5 +243,3 @@ def janela_livros():
 
 
     janela_livros.mainloop()
-
-janela_livros()

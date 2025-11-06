@@ -161,4 +161,3 @@ def janela_emprestimos():
     janela_emprestimos.mainloop()
 
 
-janela_emprestimos()

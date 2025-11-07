@@ -1,6 +1,8 @@
 {"nome": "PrimeiroLeitor", "escola": "Senai", "turma": "BackEnd", "ano": 2025, "Registro": 1}
-{"nome": "Joao da Silva", "escola": "Senai Brás", "turma": "Mecânica", "ano": 2025, "Registro": 2}
-{"nome": "Maria", "escola": "Senai São Caetano", "turma": "Python", "ano": 2025, "Registro": 3}
-{"nome": "Jose Maria Bezerra", "escola": "Senais S\u00e3o Caetano", "turma": "CAI", "ano": 2025, "Registro": 4}
-{"nome": "Evandro Guedes", "escola": "Senai S\u00e3o Caetano ", "turma": "DevOps", "ano": 2025, "Registro": 5}
-{"nome": "Antonio Miranda ", "escola": "SENAI Osasco", "turma": "DS", "ano": 2025, "Registro": 7}
+{"nome": "Joao da Silva", "escola": "Senai Brás", "turma": "Mecânica", "ano": 2025, "Registro": 3}
+{"nome": "Maria", "escola": "Senai São Caetano", "turma": "Python", "ano": 2025, "Registro": 4}
+{"nome": "Antônio Souza", "escola": "Senai Brás", "turma": "Mecancia de Autos", "ano": 2025, "Registro": 5}
+{"nome": "Eduardo", "escola": "Senai Mooca", "turma": "Dev", "ano": 2025, "Registro": 6}
+{"nome": "Jos\u00e9 Maria Bezerra", "escola": "Senais S\u00e3o Caetano", "turma": "CAI", "ano": 2025, "Registro": 7}
+{"nome": "Evandro Silveira", "escola": "Senai Br\u00e1s", "turma": "CAI", "ano": 2025, "Registro": 8}
+{"nome": "Evandro Guedes", "escola": "Senai S\u00e3o Caetano ", "turma": "DevOps", "ano": 2025, "Registro": 9}

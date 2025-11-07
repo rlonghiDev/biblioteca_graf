@@ -1,5 +1,5 @@
+import relatorios
 import time
-import interfaces_io
 
 ## Recebe a avaliação e escreve no arquivo
 def avaliacao(tipo,Registro,nota):
@@ -9,18 +9,12 @@ def avaliacao(tipo,Registro,nota):
     ##Prepara os dados e escreve no arquivo 
 
     lista_para_escrever = str(tipo) + ',' + str(Registro) + ',' + str(nota) + '\n'
+
+    with open("avaliacao.txt","at") as ava:
+
+      ava.write(lista_para_escrever)
     
-    interfaces_io.escreve_em_arquivo('avaliacao',lista_para_escrever,'a')
-    #tipo_arquivo - Chamada do arquivo que receberá o conteúdo (destino);
-    #conteudo_para_escrever - o conteudo que será inserido no arquivo
-    #forma_escrita - 'a' para acrescentar e 'w' para substituir todo o conteúdo do arquivo de destino
-
-
-    # with open("avaliacao.txt","at") as ava:
-
-    #   ava.write(lista_para_escrever)
-    
-    # ava.close()
+    ava.close()
 
 
 
@@ -33,7 +27,7 @@ def informa_media_avaliacao(tipo,Registro):
     ## Registro => 0 se for sobre atendimento 
     ## Registro diferente de 0 para entregar a avaliação correspondente ao livro, Registro indica qual é o livro 
     
-    interfaces_io.limpa_linha_em_branco('avaliacao')
+    relatorios.limpa_linha_em_branco('avaliacao')
 
     soma_notas_atendimento = 0
     soma_notas_livro = 0
@@ -44,6 +38,8 @@ def informa_media_avaliacao(tipo,Registro):
 
     with open("avaliacao.txt", "r") as ava:
         
+        
+          
         lista_int = []
         
 
@@ -86,37 +82,37 @@ def informa_media_avaliacao(tipo,Registro):
             return media_livro
 
 
-# nota = informa_media_avaliacao(1,1)
-# print(nota)
-
-# def menu_avaliação_atendimento():
-#     print("""
-#           Olá !
-#           Sua avaliação é muito importante para nós.
-#           Digite abaixo sua opinião/avaliação sendo:
-#           1 - Totalmente insatisfeito
-#           5 - Atendimento espetacular
+def menu_avaliação_atendimento():
+    print("""
+          Olá !
+          Sua avaliação é muito importante para nós.
+          Digite abaixo sua opinião/avaliação sendo:
+          1 - Totalmente insatisfeito
+          5 - Atendimento espetacular
           
-#           Se você deseja saber como anda nosso atedimento ...
-#           Digite 6
-#           """)
+          Se você deseja saber como anda nosso atedimento ...
+          Digite 6
+          """)
     
-#     nota_atendimento = int(input("Digite aqui a sua nota\n"))
+    nota_atendimento = int(input("Digite aqui a sua nota\n"))
     
         
-#     if nota_atendimento in range(1,6):
-#         avaliacao(0,0,nota_atendimento)
-#         return 'sucesso'
+    if nota_atendimento in range(1,6):
+        avaliacao(0,0,nota_atendimento)
+        return 'sucesso'
     
-#     if nota_atendimento not in range(1,7):
-#         print("Valor inválido, tente novamente")
-#         time.sleep(3)
-#         return 'erro'
+    if nota_atendimento not in range(1,7):
+        print("Valor inválido, tente novamente")
+        time.sleep(3)
+        return 'erro'
     
-#     if nota_atendimento == 6:
+    if nota_atendimento == 6:
         
-#         nota_media_atendimento = informa_media_avaliacao(0,0)
-#         return nota_media_atendimento
+        nota_media_atendimento = informa_media_avaliacao(0,0)
+        return nota_media_atendimento
     
-    
-    
+        
+        
+        
+        
+

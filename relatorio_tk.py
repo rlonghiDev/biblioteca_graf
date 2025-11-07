@@ -2,6 +2,7 @@ from tkinter import *
 import tkinter as tk
 from tkinter import ttk
 import relatorio_tk_livro
+import relatorio_tk_leitor
 
 
 
@@ -12,7 +13,7 @@ def obter_selecao():
 
     if selecao == 'Livros': relatorio_tk_livro.fichas_de_livros()
 
-    if selecao == 'Leitores':print("Leitores")
+    if selecao == 'Leitores':relatorio_tk_leitor.fichas_de_leitores()
 
     if selecao == 'Emprestimo': print("Emprestimo")
 

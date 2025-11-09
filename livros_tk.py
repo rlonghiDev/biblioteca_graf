@@ -37,7 +37,7 @@ def janela_livros():
     #janela_livros.geometry('600x650+50+20')
     Etiqueta1 = Label(janela_livros, height=3,width=50,fg = 'black', bg = 'white',text="Gerenciamento do Acervo de Livros",relief='groove')
     Etiqueta1.grid(row=0,column=0)
-    Etiqueta2 = Label(janela_livros, height=2, width=40, text = 'Escolha a função desejada abaixo')
+    Etiqueta2 = Label(janela_livros, height=2, width=40, text = 'Verifique abaixo a nota e os comentários')
     Etiqueta2.grid(row=1,column=0)
    
    

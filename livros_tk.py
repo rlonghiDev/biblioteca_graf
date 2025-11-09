@@ -37,12 +37,12 @@ def janela_livros():
     #janela_livros.geometry('600x650+50+20')
     Etiqueta1 = Label(janela_livros, height=3,width=50,fg = 'black', bg = 'white',text="Gerenciamento do Acervo de Livros",relief='groove')
     Etiqueta1.grid(row=0,column=0)
-    Etiqueta2 = Label(janela_livros, height=2, width=40, text = 'Verifique abaixo a nota e os comentários')
+    Etiqueta2 = Label(janela_livros, height=2, width=40, text = 'Escolha a função desejada abaixo')
     Etiqueta2.grid(row=1,column=0)
    
    
     ##Em branco
-    Label(text="", width=10,bg='white').grid(row=2, column=0)
+    Label(janela_livros,text="", width=10,bg='white').grid(row=2, column=0)
                
     #### Combobox ####
     opcoes = ['Acrescentar','Retirar','Voltar']
@@ -51,7 +51,7 @@ def janela_livros():
     combobox.grid(row=3,column=0)
 
     ##Em branco
-    Label(text="", width=10,bg='white').grid(row=4, column=0)
+    Label(janela_livros,text="", width=10,bg='white').grid(row=4, column=0)
                
     
     

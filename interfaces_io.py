@@ -1,5 +1,6 @@
 import mensagem_aviso_tk
 
+arquivo_para_abrir = ''
 
 def nome_arquivo(tipo_arquivo):
 
@@ -11,6 +12,8 @@ def nome_arquivo(tipo_arquivo):
         arquivo_para_abrir = "emprestimos.txt"
     if tipo_arquivo == 'avaliacao':
         arquivo_para_abrir = "avaliacao.txt"
+    if tipo_arquivo == 'comentario':
+        arquivo_para_abrir = "comentarios.txt"
 
     return arquivo_para_abrir
 

@@ -20,10 +20,10 @@ def avaliacao(tipo,Registro,nota):
 
 def informa_media_avaliacao(tipo,Registro):
     
-    # tipo => 0 se for sobre atendimento 
+    # tipo => 0 se for sobre atendimento (Enviar int)
     # tipo => 1 se for sobre livro
 
-    ## Registro => 0 se for sobre atendimento 
+    ## Registro => 0 se for sobre atendimento (Enviar int)
     ## Registro diferente de 0 para entregar a avaliação correspondente ao livro, Registro indica qual é o livro 
     
     interfaces_io.limpa_linha_em_branco('avaliacao')
@@ -53,6 +53,7 @@ def informa_media_avaliacao(tipo,Registro):
             i = i.replace(" ","")
             i = int(i)
             lista_int.append(i)
+            
 
         #identifica avaliação de atendimento
         if lista_int[0] == 0:
@@ -72,11 +73,13 @@ def informa_media_avaliacao(tipo,Registro):
     if tipo == 0:
         if soma_notas_atendimento > 0:
             media_atendimento = (soma_notas_atendimento / c1)
+            media_atendimento = round(media_atendimento,2)
             return media_atendimento
 
     if tipo == 1:
         if soma_notas_livro > 0:
             media_livro = (soma_notas_livro/c2)
+            media_livro = round(media_livro)
             return media_livro
 
 

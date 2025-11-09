@@ -5,6 +5,7 @@ import livros_tk
 import leitores_tk
 import emprestimo_tk
 import relatorio_tk
+import comentario_registros
 
 
 def obter_selecao():
@@ -20,8 +21,7 @@ def obter_selecao():
     
     if selecao == 'Relatorios':relatorio_tk.escolher_relatorio()
         
-    if selecao == 'Opiniao Atendimento':
-        print("Opiniao")
+    if selecao == 'Opiniao Atendimento':comentario_registros.comentario_recebe()
 
     if selecao == 'Sair':
         exit()

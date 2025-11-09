@@ -4,6 +4,7 @@ from tkinter import ttk
 import livros_tk
 import leitores_tk
 import emprestimo_tk
+import relatorio_tk
 
 
 def obter_selecao():
@@ -16,6 +17,8 @@ def obter_selecao():
     if selecao == 'Leitores':leitores_tk.janela_leitores()
 
     if selecao == 'Emprestimo':emprestimo_tk.janela_emprestimos()
+    
+    if selecao == 'Relatorios':relatorio_tk.escolher_relatorio()
         
     if selecao == 'Opiniao Atendimento':
         print("Opiniao")
@@ -44,7 +47,7 @@ Label(text="", width=10,bg='white').grid(row=4, column=0)
 
 #### Combobox ####
 
-opcoes = ['Livros','Leitores','Emprestimo','Opiniao Atendimento','Sair']
+opcoes = ['Livros','Leitores','Emprestimo','Relatorios','Opiniao Atendimento','Sair']
 combobox = ttk.Combobox(janela, values=opcoes, state="readonly",height=10,width=15)
 combobox.set("Escolha uma opção") # Define o texto inicial
 combobox.grid(row=5,column=0)

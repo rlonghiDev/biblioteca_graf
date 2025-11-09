@@ -43,7 +43,7 @@ def janela_emprestimos():
     Etiqueta2.grid(row=2,column=0)
     
      ##Em branco
-    Label(text="", width=10,bg='white').grid(row=3, column=0) 
+    Label(janela_emprestimos,text="", width=10,bg='white').grid(row=3, column=0) 
     
     #### Combobox ####
 
@@ -53,14 +53,14 @@ def janela_emprestimos():
     combobox.grid(row=4,column=0)
     
      ##Em branco
-    Label(text="", width=10,bg='white').grid(row=5, column=0) 
+    Label(janela_emprestimos,text="", width=10,bg='white').grid(row=5, column=0) 
 
     # Criação do botão
     botao = tk.Button(janela_emprestimos, text="OK", command=obter_selecao)
     botao.grid(row=6,column=0)
     
      ##Em branco
-    Label(text="", width=10,bg='white').grid(row=7, column=0)
+    Label(janela_emprestimos,text="", width=10,bg='white').grid(row=7, column=0)
     
     
     #Prepara e envia para ser escrito no arquivo
@@ -153,7 +153,8 @@ def janela_emprestimos():
     
     
     
-    
+    # def encerra_emprestimo():
+        
 
 
 

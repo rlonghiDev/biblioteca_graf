@@ -28,9 +28,8 @@ def fichas_de_emprestimos():
         emprestimos = interfaces_io.le_arquivo('emprestimo')
         
         for emprestimo in emprestimos:
-            dict_emprestimo = emprestimo
-            info_emprestimo = json.loads(dict_emprestimo)
-            etiqueta_emprestimo = monta_string.monta_string_emprestimo(info_emprestimo)
+            dict_emprestimo = json.loads(emprestimo)
+            etiqueta_emprestimo = monta_string.monta_string_emprestimo(dict_emprestimo)
             fichas += etiqueta_emprestimo
         
         return fichas
@@ -38,5 +37,3 @@ def fichas_de_emprestimos():
         
 
     text_area.insert('1.0',fichas_emprestimos())
-    
-fichas_de_emprestimos()
